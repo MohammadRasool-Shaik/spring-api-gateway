@@ -1,0 +1,17 @@
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8761/eureka/
+server:
+    port: 9094
+spring:
+    application:
+        name: API-Gateway
+zuul:
+    routes:
+        product:
+            path: /products/**
+            serviceId: product-service
+        user:
+            path: /users/**
+            serviceId: user-service
