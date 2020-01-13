@@ -18,4 +18,5 @@ hs_err_pid*
 target/
 .settings/
 .idea/
+.mvn/
 src/main/resources/projectAllocation.log
