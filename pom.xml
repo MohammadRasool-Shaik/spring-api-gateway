@@ -22,12 +22,25 @@
     </properties>
 
     <modules>
-        <module>discovery-service</module>
-        <module>Users</module>
         <module>api-gateway</module>
+        <module>discovery-service</module>
+        <module>spring-config-server</module>
         <module>product</module>
+        <module>Users</module>
     </modules>
+
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
