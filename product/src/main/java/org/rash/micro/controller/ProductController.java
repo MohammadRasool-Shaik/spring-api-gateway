@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
@@ -76,4 +78,17 @@ public class ProductController {
         return productRepository.removeByProductId(productId);
     }
 
+    @GetMapping(params = "userName")
+    public @ResponseBody
+    List<Product> fetchByUserName(@RequestParam("userName") String userName) {
+        List<Product> products = fetchAllProducts();
+        Map<String, List<Product>> productsByType = products.stream().collect(Collectors.groupingBy(Product::getProductType));
+        if (userName.equals("user")) {
+            return productsByType.get("soap");
+        } else if (userName.equals("admin")) {
+            return products;
+        } else {
+            return productsByType.get("mobile");
+        }
+    }
 }
