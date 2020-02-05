@@ -3,7 +3,7 @@ eureka:
         serviceUrl:
             defaultZone: http://localhost:8761/eureka/
 server:
-    port: 9098
+    port: 9093
 spring:
     application:
         name: product-service
