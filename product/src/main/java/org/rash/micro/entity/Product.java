@@ -1,16 +1,27 @@
 package org.rash.micro.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "product")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Product {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer productId;
 
     @Column(name = "pname", nullable = false, length = 50)
@@ -22,45 +33,4 @@ public class Product {
     @Column(nullable = false, scale = 2)
     private Double productPrice;
 
-    public Product() {
-    }
-
-    public Product(Integer productId, String productName, String productType, Double productPrice) {
-        this.productId = productId;
-        this.productName = productName;
-        this.productType = productType;
-        this.productPrice = productPrice;
-    }
-
-    public Integer getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Integer productId) {
-        this.productId = productId;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public String getProductType() {
-        return productType;
-    }
-
-    public void setProductType(String productType) {
-        this.productType = productType;
-    }
-
-    public Double getProductPrice() {
-        return productPrice;
-    }
-
-    public void setProductPrice(Double productPrice) {
-        this.productPrice = productPrice;
-    }
 }

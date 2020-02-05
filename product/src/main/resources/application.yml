@@ -7,3 +7,17 @@ server:
 spring:
     application:
         name: product-service
+
+    datasource:
+        url: jdbc:hsqldb:mem:products
+        username: sa
+        password: 1
+        testWhileIdle: true
+        validationQuery: SELECT 1
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.HSQLDialect
+        show-sql: true

@@ -19,6 +19,7 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
         <spring-security-oauth2.verstion>2.0.18.RELEASE</spring-security-oauth2.verstion>
+        <lombok.verstion>1.18.8</lombok.verstion>
     </properties>
 
     <modules>
@@ -47,11 +48,15 @@
 
         <dependencies>
             <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-sleuth</artifactId>
+            </dependency>
+            <!--<dependency>
                 <groupId>org.springframework.security.oauth</groupId>
                 <artifactId>spring-security-oauth2</artifactId>
                 <version>${spring-security-oauth2.verstion}</version>
             </dependency>
-
+-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
