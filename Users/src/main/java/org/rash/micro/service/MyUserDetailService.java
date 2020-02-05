@@ -1,5 +1,6 @@
-package org.rash.micro.config;
+package org.rash.micro.service;
 
+import org.rash.micro.config.MyUserDetails;
 import org.rash.micro.entity.User;
 import org.rash.micro.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Service
+@Service("myUserDetailService")
 public class MyUserDetailService implements UserDetailsService {
     @Autowired
     UserRepository userRepository;

@@ -13,9 +13,13 @@ spring:
         username: sa
         password: 1
     jpa:
-        hibernate:
-          ddl-auto: update
+      hibernate:
+        ddl-auto: update
         database-platform: org.hibernate.dialect.H2Dialect
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: false
     h2:
         console:
             enabled: true

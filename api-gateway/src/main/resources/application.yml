@@ -4,10 +4,13 @@ eureka:
             defaultZone: http://localhost:8761/eureka/
 server:
     port: 9094
+
 spring:
     application:
         name: API-Gateway
+
 zuul:
+#    sensitiveHeaders: Cookie,Set-Cookie
     routes:
         product:
             path: /products/**
@@ -15,3 +18,9 @@ zuul:
         user:
             path: /users/**
             serviceId: user-service
+
+#security:
+#    oauth2:
+#        resource:
+#            jwt:
+#                key-value: 123

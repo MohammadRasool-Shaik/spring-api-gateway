@@ -4,16 +4,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.rash.micro</groupId>
-        <artifactId>spring-agi-gateway</artifactId>
+        <artifactId>spring-api-gateway</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
-    <groupId>org.rash.micro</groupId>
     <artifactId>spring-config-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-config-server</name>
-    <description>Demo project for Spring Boot</description>
+    <description>Demo project for Spring Boot Configuration</description>
 
 
     <dependencies>
@@ -21,8 +20,10 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-eureka-client</artifactId>
+        </dependency>
     </dependencies>
 
 

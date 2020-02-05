@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.rash.micro</groupId>
-    <artifactId>spring-agi-gateway</artifactId>
+    <artifactId>spring-api-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-agi-gateway</name>
+    <name>spring-api-gateway</name>
     <description>Demo project for Spring Boot</description>
     <packaging>pom</packaging>
 

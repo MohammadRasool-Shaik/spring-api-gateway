@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 
 @EnableEurekaClient
 @EnableZuulProxy
+
 @SpringBootApplication
 public class ApiGatewayApplication {
 
