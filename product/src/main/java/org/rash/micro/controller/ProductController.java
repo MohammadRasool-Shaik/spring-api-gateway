@@ -1,10 +1,9 @@
 package org.rash.micro.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.rash.micro.entity.Product;
 import org.rash.micro.exception.ProductNotFoundException;
 import org.rash.micro.repository.ProductRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,8 +21,8 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
+@Slf4j
 public class ProductController {
-    private static Logger logger = LoggerFactory.getLogger(ProductController.class);
 
     @Autowired
     protected ProductRepository productRepository;
@@ -31,7 +30,7 @@ public class ProductController {
     @GetMapping
     public @ResponseBody
     List<Product> fetchAllProducts() {
-        logger.info("Fetch all products");
+        log.info("Fetch all products");
         return productRepository.findAll();
     }
 
