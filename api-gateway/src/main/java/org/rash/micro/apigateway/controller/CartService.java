@@ -1,5 +1,6 @@
 package org.rash.micro.apigateway.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -18,6 +19,7 @@ public class CartService {
     RestTemplate restTemplate;
 
     @GetMapping(value = "/cart/{userName}")
+    @HystrixCommand(fallbackMethod = "fallbackMethod")
     public String getCartInfo(@PathVariable(name = "userName") String userName) {
         log.info("GET /cart/" + userName);
 
@@ -26,4 +28,10 @@ public class CartService {
 
         return customerResponse + productResponse;
     }
+
+    public String fallbackMethod(String userName) {
+
+        return "Fallback response:: No User details available temporarily";
+    }
+
 }
