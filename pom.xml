@@ -20,6 +20,7 @@
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
         <spring-security-oauth2.verstion>2.0.18.RELEASE</spring-security-oauth2.verstion>
         <lombok.verstion>1.18.8</lombok.verstion>
+        <hystrix.verstion>1.1.0.RELEASE</hystrix.verstion>
     </properties>
 
     <modules>
@@ -72,6 +73,11 @@
                 <version>${spring-security-oauth2.verstion}</version>
             </dependency>
 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-hystrix</artifactId>
+                <version>${hystrix.verstion}</version>
+            </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
