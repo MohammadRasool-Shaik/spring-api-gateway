@@ -17,12 +17,14 @@ management:
     web:
         exposure:
             include : "*"
-
 spring:
     application:
         name: Spring-Config
     cloud:
       config:
         server:
+            git:
+                uri: D:\\Workspace\\config-server-repo
+            cloneOnStart: true
 server:
   port: 9999
