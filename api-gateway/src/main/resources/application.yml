@@ -22,7 +22,7 @@ info:
     name: api-gateway
 
 server:
-    port: ${PORT:9094}
+    port: ${API_GATEWAY_PORT:9094}
 
 spring:
     application:

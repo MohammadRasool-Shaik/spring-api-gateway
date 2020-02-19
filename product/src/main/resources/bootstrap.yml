@@ -20,5 +20,5 @@ spring:
             name: client-config
             enabled: true
             uri: ${CONFIG_SERVER_URL:http://localhost:9999}
-#    profiles:
-#        active: development
+    profiles:
+        active: development #If property exists in this profile/file it takes otherwise it checks in default profile set

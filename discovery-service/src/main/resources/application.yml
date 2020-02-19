@@ -3,7 +3,7 @@ eureka:
         fetch-registry: false
         register-with-eureka: false
 server:
-    port: ${PORT:8761}
+    port: ${DISCOVERY_PORT:8761}
 
 management:
   security:
