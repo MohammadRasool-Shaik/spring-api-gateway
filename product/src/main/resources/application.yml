@@ -16,9 +16,12 @@ management:
     web:
         exposure:
             include : "*"
-
+# custom attribute for the actuator info endpoint
+info:
+  app:
+    name: product-service
 server:
-    port: 9093
+    port: ${PORT:9093}
 spring:
     application:
         name: product-service

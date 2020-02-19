@@ -5,7 +5,7 @@ eureka:
 
     client:
         serviceUrl:
-            defaultZone: http://localhost:8761/eureka/
+            defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
         healthcheck:
             enabled: true
         lease:
@@ -17,8 +17,12 @@ management:
     web:
         exposure:
             include : "*"
+info:
+  app:
+    name: api-gateway
+
 server:
-    port: 9094
+    port: ${PORT:9094}
 
 spring:
     application:
