@@ -1,4 +1,8 @@
 spring:
     cloud:
+        services:
+            registrationMethod: route
         config:
+            name: client-config
+            enabled: true
             uri: ${CONFIG_SERVER_URL:http://localhost:9999}

@@ -21,7 +21,7 @@ info:
     name: user-service
 
 server:
-    port: port: ${USER_SERVICE_PORT:9092}
+    port: ${USER_SERVICE_PORT:9092}
 spring:
     application:
         name: user-service

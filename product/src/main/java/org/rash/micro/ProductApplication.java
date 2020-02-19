@@ -16,7 +16,7 @@ public class ProductApplication {
 
     @Autowired
     public void setEnv(Environment e) {
-        System.out.println("Testtttttttttttttttttttttttttttttttttttttttttttttttt" + e.getProperty("msg"));
+        System.out.println("Message" + e.getProperty("msg"));
     }
 
 }

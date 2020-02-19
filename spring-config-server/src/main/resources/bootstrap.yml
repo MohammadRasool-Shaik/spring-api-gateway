@@ -16,7 +16,7 @@ spring:
       config:
         server:
             git:
-                uri: https://github.com/MohammadRasool-Shaik/config-server-repo
+                uri: D:/Workspace/config-server-repo
 #                searchPaths: #If we have to specify a particular folder we can provide the location via searchPaths.
             cloneOnStart: true
 server:
