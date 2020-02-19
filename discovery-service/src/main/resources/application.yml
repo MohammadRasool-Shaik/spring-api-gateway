@@ -4,3 +4,14 @@ eureka:
         register-with-eureka: false
 server:
     port: ${PORT:8761}
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+        exposure:
+            include : "*"
+info:
+  app:
+    name: discovery-service
