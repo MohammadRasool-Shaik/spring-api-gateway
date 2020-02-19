@@ -1,0 +1,20 @@
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+        exposure:
+            include : "*"
+# custom attribute for the actuator info endpoint
+info:
+  app:
+    name: product-service
+
+spring:
+    application:
+        name: product-service
+    cloud:
+        config:
+            uri: ${CONFIG_SERVER_URL:http://localhost:9999}
+#    profiles:
+#        active: development

@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.rash.micro.entity.User;
 import org.rash.micro.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.MediaType;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
+@RefreshScope
 @Slf4j
 public class UserController {
 

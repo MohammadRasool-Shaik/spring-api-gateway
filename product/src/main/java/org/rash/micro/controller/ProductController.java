@@ -5,6 +5,8 @@ import org.rash.micro.entity.Product;
 import org.rash.micro.exception.ProductNotFoundException;
 import org.rash.micro.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,16 +24,27 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
 @Slf4j
+@RefreshScope
 public class ProductController {
 
     @Autowired
     protected ProductRepository productRepository;
+
+    @Value("${msg:Config Server is not working. Please check...}")
+    private String msg;
 
     @GetMapping
     public @ResponseBody
     List<Product> fetchAllProducts() {
         log.info("Fetch all products");
         return productRepository.findAll();
+    }
+
+    @GetMapping(value = "/msg")
+    public @ResponseBody
+    String getMsg() {
+        log.info("Fetch all products");
+        return msg;
     }
 
     @GetMapping(value = "/{productId}")

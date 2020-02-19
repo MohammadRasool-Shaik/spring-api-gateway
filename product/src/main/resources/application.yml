@@ -4,28 +4,14 @@ eureka:
             leaseExpirationDurationInSeconds: 2
     client:
         serviceUrl:
-            defaultZone: http://localhost:8761/eureka/
+            defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
         healthcheck:
             enabled: true
         lease:
               duration: 5
-management:
-  security:
-    enabled: false
-  endpoints:
-    web:
-        exposure:
-            include : "*"
-# custom attribute for the actuator info endpoint
-info:
-  app:
-    name: product-service
 server:
-    port: ${PORT:9093}
+    port: ${PRODUCT_SERVICE_PORT:9093}
 spring:
-    application:
-        name: product-service
-
     datasource:
         url: jdbc:hsqldb:mem:products
         username: sa

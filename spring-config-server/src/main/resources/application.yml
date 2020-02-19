@@ -1,15 +1,3 @@
-eureka:
-    instance:
-        leaseRenewalIntervalInSeconds: 5
-        leaseExpirationDurationInSeconds: 2
-
-    client:
-        serviceUrl:
-            defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
-        healthcheck:
-            enabled: true
-        lease:
-              duration: 5
 info:
   app:
     name: config-service
@@ -28,7 +16,8 @@ spring:
       config:
         server:
             git:
-                uri: D:\\Workspace\\config-server-repo
+                uri: https://github.com/MohammadRasool-Shaik/config-server-repo
+#                searchPaths: #If we have to specify a particular folder we can provide the location via searchPaths.
             cloneOnStart: true
 server:
-  port: ${PORT:9999}
+  port: 9999
