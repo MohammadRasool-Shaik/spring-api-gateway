@@ -7,8 +7,8 @@ spring:
                 service-id: config-server
                 enabled: true
             fail-fast: true
-#    profiles:
-#        active: dev #If property exists in this profile/file it takes otherwise it checks in default profile set
+    profiles:
+        active: prod #If property exists in this profile/file it takes otherwise it checks in default profile set
 
 eureka:
     client:
