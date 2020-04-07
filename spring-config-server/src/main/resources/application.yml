@@ -7,7 +7,7 @@ spring:
                 uri: https://github.com/MohammadRasool-Shaik/config-server-repo.git
                 cloneOnStart: true
 #               searchPaths: #If we have to specify a particular folder we can provide the location via searchPaths.
-                search-paths: 'config/{application}'
+                search-paths: '{application}'
 
 eureka:
     client:
