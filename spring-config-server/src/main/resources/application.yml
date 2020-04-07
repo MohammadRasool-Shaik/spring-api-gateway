@@ -1,6 +1,19 @@
+spring:
+    cloud:
+      config:
+        server:
+            git:
+#                uri: D:/Workspace/config-server-repo
+                uri: https://github.com/MohammadRasool-Shaik/config-server-repo.git
+                cloneOnStart: true
+#               searchPaths: #If we have to specify a particular folder we can provide the location via searchPaths.
+                search-paths: 'config/{application}'
+
 eureka:
     client:
         enabled: true
+        serviceUrl:
+            defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
         healthcheck:
             enabled: true
         registryFetchIntervalSeconds: 10 # how often to fetch the registry from Eureka server
@@ -10,30 +23,7 @@ eureka:
     instance:
         leaseRenewalIntervalInSeconds: 5 # intervalSeconds between subsequent heartbeats sent to Eureka server
         leaseExpirationDurationInSeconds: 2 # time that Eureka server waits since it received last heartbeat before it can evict this instance
-management:
-  security:
-    enabled: false
-  endpoints:
-    web:
-        exposure:
-            include: ["health", "info", "refresh"]
-info:
-  app:
-    name: user-service
 
+# Server properties
 server:
-    port: ${USER_SERVICE_PORT:9092}
-
-spring:
-    datasource:
-        url: jdbc:h2:mem:testdb
-        username: sa
-        password: 1
-    jpa:
-      hibernate:
-        ddl-auto: update
-        database-platform: org.hibernate.dialect.H2Dialect
-      show-sql: true
-      properties:
-        hibernate:
-          format_sql: false
+  port: 9999

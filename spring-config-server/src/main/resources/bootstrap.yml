@@ -1,24 +1,3 @@
-info:
-  app:
-    name: config-service
-
-management:
-  security:
-    enabled: false
-  endpoints:
-    web:
-        exposure:
-            include : "*"
 spring:
     application:
-        name: Spring-Config
-    cloud:
-      config:
-        server:
-            git:
-#                uri: D:/Workspace/config-server-repo
-                uri: https://github.com/MohammadRasool-Shaik/config-server-repo.git
-#                searchPaths: #If we have to specify a particular folder we can provide the location via searchPaths.
-            cloneOnStart: true
-server:
-  port: 9999
+        name: config-server

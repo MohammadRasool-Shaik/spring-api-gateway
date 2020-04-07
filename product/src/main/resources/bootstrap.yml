@@ -1,24 +1,16 @@
-management:
-  security:
-    enabled: false
-  endpoints:
-    web:
-        exposure:
-            include : "*"
-# custom attribute for the actuator info endpoint
-info:
-  app:
-    name: product-service
-
 spring:
     application:
         name: product-service
     cloud:
-        services:
-            registrationMethod: route
         config:
-            name: client-config
-            enabled: true
-            uri: ${CONFIG_SERVER_URL:http://localhost:9999}
-    profiles:
-        active: development #If property exists in this profile/file it takes otherwise it checks in default profile set
+            discovery:
+                service-id: config-server
+                enabled: true
+            fail-fast: true
+#    profiles:
+#        active: dev #If property exists in this profile/file it takes otherwise it checks in default profile set
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
